@@ -1,0 +1,332 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+
+/* Paleta de colores inspirada en Ptite France: Blanco (#FFFFFF), Gris claro (#F5F5F5), Negro (#000000), Beige (#F4E4BC), Marrón claro (#D2B48C) */
+body {
+    font-family: 'Roboto', sans-serif; /* Sans-serif limpia para cuerpo */
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF; /* Blanco puro */
+    color: #000000; /* Negro para texto */
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Serif elegante para títulos */
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    header {
+    height: auto;
+}
+
+}
+
+header {
+    background-color: #FFFFFF; /* Blanco */
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    margin: 0;
+    color: #D2B48C; /* Marrón claro */
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #D2B48C;
+}
+
+.hero {
+    background-image: url('header.png');
+    background-size: cover;  
+    background-position: center;
+    height: 500px; /* Ajusta hasta que se vea bien */
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+}
+
+
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Overlay sutil */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-hero {
+    background-color: #F4E4BC; /* Beige */
+    color: #000000;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #D2B48C;
+}
+
+main {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #F5F5F5; /* Gris claro para secciones */
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.producto {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.producto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.producto h3 {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.producto p {
+    padding: 0 1rem;
+    margin: 0;
+    font-weight: 500;
+    color: #D2B48C;
+}
+
+.agregar-carrito {
+    width: 100%;
+    background-color: #F4E4BC; /* Beige */
+    color: #000000;
+    border: none;
+    padding: 0.75rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.agregar-carrito:hover {
+    background-color: #D2B48C;
+}
+
+/* Modales */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: #FFFFFF;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #D2B48C;
+}
+
+.cerrar:hover {
+    color: #000000;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input {
+    padding: 0.75rem;
+    border: 1px solid #F5F5F5;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+}
+
+input:focus {
+    outline: none;
+    border-color: #D2B48C;
+}
+
+button[type="submit"], #vaciar-carrito {
+    background-color: #D2B48C; /* Marrón claro */
+    color: #FFFFFF;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover, #vaciar-carrito:hover {
+    background-color: #B8860B;
+}
+
+footer {
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 2rem;
+    color: #000000;
+    font-size: 0.9rem;
+    border-top: 1px solid #F5F5F5;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    nav ul {
+        gap: 1rem;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-content {
+        margin: 20% auto;
+        width: 95%;
+    }
+}
+
+.logo {
+    width: 40px;              /* Tamaño del logo */
+    height: 40px;
+    margin-right: 10px;       /* Espacio entre logo y texto */
+}
+.titulo-con-logo {
+    display: flex;
+    align-items: center; /* centra verticalmente */
+    gap: 10px; /* separa logo y título */
+}
+
+.titulo-con-logo img {
+    height: 50px; /* reduce el tamaño */
+}
+
+.social-minimal {
+    display: flex;
+    gap: 18px;
+}
+
+.social-minimal a {
+    font-size: 24px;
+    color: #333; /* Cambia el color según tu paleta */
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social-minimal a:hover {
+    color: #000;         /* Oscurece al pasar el mouse */
+    transform: scale(1.15);
+}
+
+.modal-content {
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+}
